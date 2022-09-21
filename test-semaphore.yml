@@ -10,7 +10,7 @@
  
   tasks:
   - name: test_touch
-    command: touch /home/aursnik/test_test.txt 
+    command: touch /tmp/test_test.txt 
 
 
 
