@@ -6,7 +6,7 @@
 ---
 - name: Test dosega na testni srchub
   #hosts: all,!vsi_db
-  hosts: testni_server1
+  hosts: testni_server2
  
   tasks:
   - name: test_touch
