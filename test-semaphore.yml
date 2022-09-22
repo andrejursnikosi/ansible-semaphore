@@ -1,0 +1,21 @@
+# This is your main playbook you will run with:
+# ansible-playbook site.yml
+# You can kick off everything from this playbook.
+# Or, you can create separate playbooks in this directory for specific orchestration events.
+
+---
+- name: Test dosega na docker.test
+  hosts: testni_server1
+  #become: true
+ 
+  tasks:
+  - name: test_touch
+    command: touch /tmp/test_test.txt
+    
+  - name: test_vault
+    shell: |
+      echo 'line one
+      {{ test_key }}
+      line three' >> /tmp/test_vault.txt
+
+

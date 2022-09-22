@@ -1,0 +1,14 @@
+all:
+  children:
+    test_semaphore:
+      children:
+        testni_server1:
+          hosts:
+           docker.test.osi.local:
+             ansible_host: 172.27.41.200
+    test_semaphore_2:
+      children:
+        testni_server2:
+          hosts:
+           oraoto.osi.local: 
+             ansible_host: 172.27.41.20
