@@ -4,7 +4,7 @@
 # Or, you can create separate playbooks in this directory for specific orchestration events.
 
 ---
-- name: Test dosega na docker.test
+- name: Prenos slike java:latest iz srchub:docker:java na docker.test
   hosts: docker.test
   become: true
  
