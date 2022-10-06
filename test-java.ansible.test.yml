@@ -1,0 +1,29 @@
+# This is your main playbook you will run with:
+# ansible-playbook site.yml
+# You can kick off everything from this playbook.
+# Or, you can create separate playbooks in this directory for specific orchestration events.
+
+---
+- name: Prenos slike java iz srchub:docker na ansible
+  hosts: ansible.test
+  become: true
+ 
+  tasks:
+  - name: login
+    command: sudo docker login -u andrej.ursnik1 -p {{ andrej_gitlab_secret }} docker.osi.si
+    
+  - name: pull image
+    command: sudo docker pull docker.osi.si/docker/java:latest
+    
+  - name: save image to .tar
+    command: sudo docker save -o /test-ansible/files/images/java-latest.tar docker.osi.si/docker/java:latest
+  
+  - name: delete imagee java
+    command: sudo docker image rm docker.osi.si/docker/java:latest
+
+  - name: change owner of .tar
+    command: sudo chown root:osiadm /test-ansible/files/images/java-latest.tar
+    
+  - name: change permission of .tar
+    command: sudo chmod 0660 /test-ansible/files/images/java-latest.tar
+
