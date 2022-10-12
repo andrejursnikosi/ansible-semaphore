@@ -1,0 +1,15 @@
+---
+# tasks file for /test-ansible/roles/prenos-slike-na-server
+
+    - name: copy image .tar v /opt/images
+      copy:
+        src: /test-ansible/files/images/java-latest.tar
+        dest: /opt/images/java-latest.tar
+        #remote_src: yes
+        #directory_mode: yes
+        owner: aursnik
+        group: aursnik
+        mode: 0755
+        
+    - name: load image to docker   
+      command: sudo docker load --input /opt/images/java-latest.tar

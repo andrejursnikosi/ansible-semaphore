@@ -1,15 +1,7 @@
-# This is your main playbook you will run with:
-# ansible-playbook site.yml
-# You can kick off everything from this playbook.
-# Or, you can create separate playbooks in this directory for specific orchestration events.
-
 ---
-- name: Prenos slike java iz srchub:docker na ansible
-  hosts: ansible.test
-  become: true
- 
-  tasks:
-  - name: login
+# tasks file for /test-ansible/roles/prenos-slike
+
+  - name: login to srchub
     command: sudo docker login -u andrej.ursnik1 -p {{ andrej_gitlab_secret }} docker.osi.si
     
   - name: pull image
@@ -26,4 +18,3 @@
     
   - name: change permission of .tar
     command: sudo chmod 0660 /test-ansible/files/images/java-latest.tar
-

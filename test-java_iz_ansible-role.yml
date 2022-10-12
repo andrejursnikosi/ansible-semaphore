@@ -4,15 +4,8 @@
 # Or, you can create separate playbooks in this directory for specific orchestration events.
 
 ---
-- name: Test dosega na docker.test
+- name: Kopiranje slike .tar na server in prenos v docker
   hosts: docker.test
   become: true
- 
-  tasks:
-  - name: login
-    command: sudo docker login -u andrej.ursnik1 -p {{ andrej_gitlab_secret }} docker.osi.si
-    
-  - name: pull image
-    command: sudo docker pull docker.osi.si/docker/java:latest
-  
-
+  roles:
+    - prenos-slike-na-server
