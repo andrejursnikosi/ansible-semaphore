@@ -13,3 +13,6 @@
         
     - name: load image to docker   
       command: sudo docker load --input /opt/images/java-latest.tar
+      
+    - name: delete .tar java slike
+      command: sudo rm /opt/images/java-latest.tar
