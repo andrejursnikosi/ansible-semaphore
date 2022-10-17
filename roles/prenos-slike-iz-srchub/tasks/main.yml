@@ -1,5 +1,6 @@
 ---
 # tasks file for /test-ansible/roles/prenos-slike
+#test
 
   - name: login to srchub
     command: sudo docker login -u andrej.ursnik1 -p {{ andrej_gitlab_secret }} docker.osi.si
