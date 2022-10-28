@@ -3,7 +3,7 @@
 
     - name: copy image .tar v /opt/images
       copy:
-        src: /test-ansible/files/images/java-latest.tar
+        src: /opt/java-latest.tar
         dest: /opt/images/java-latest.tar
         #remote_src: yes
         #directory_mode: yes
