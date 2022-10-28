@@ -3,7 +3,7 @@
 
     - name: copy image .tar v /opt/images
       copy:
-        src: /opt/java-latest.tar
+        src: /home/semaphore/java-latest.tar
         dest: /opt/images/java-latest.tar
         #remote_src: yes
         #directory_mode: yes
