@@ -5,7 +5,7 @@
 
 ---
 - name: Prenos slike java iz srchub:docker na ansible
-  hosts: ansible.test
+  hosts: ansible.test.osi.local
   become: true
   roles:
     - prenos-slike-iz-srchub
