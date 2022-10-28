@@ -1,0 +1,12 @@
+# This is your main playbook you will run with:
+# ansible-playbook site.yml
+#test
+# You can kick off everything from this playbook.
+# Or, you can create separate playbooks in this directory for specific orchestration events.
+
+---
+- name: Kopiranje slike .tar na server in prenos v docker
+  hosts: docker.test.osi.local
+  become: true
+  roles:
+    - prenos-slike-na-server
